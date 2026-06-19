@@ -5,6 +5,7 @@ import checkedImage from '@/assets/checked.svg'
 import plusImage from '@/assets/plus.svg'
 
 interface Props {
+  id: number
   isAdded: boolean
   imgSrc: string
   title: string
@@ -12,7 +13,12 @@ interface Props {
   isFavorite: boolean
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+defineEmits<{
+  (e: 'addFavorite', product: Product): void
+  (e: 'addToCart', product: Product): void
+}>()
 </script>
 
 <template>
@@ -22,6 +28,7 @@ defineProps<Props>()
     <div class="relative">
       <img
         class="absolute cursor-pointer transition hover:scale-105 active:scale-100"
+        @click="$emit('addFavorite', props)"
         :src="isFavorite ? likeIcon : unlikeIcon"
         alt=""
         width="32"
@@ -45,6 +52,7 @@ defineProps<Props>()
       </div>
       <img
         class="cursor-pointer transition hover:scale-105 active:scale-100"
+        @click="$emit('addToCart', props)"
         :src="isAdded ? checkedImage : plusImage"
         alt=""
         width="32"
