@@ -24,7 +24,9 @@ const menuItems = [
 </script>
 
 <template>
-  <header class="flex justify-between items-center p-10">
+  <header
+    class="flex flex-col justify-between items-center gap-5 p-5 border-slate-300 border-b sm:flex-row md:p-10"
+  >
     <RouterLink class="flex items-center gap-4" to="/">
       <img class="w-10" :src="logoImage" alt="Vue Sneakers Logo" />
       <div>
@@ -33,7 +35,7 @@ const menuItems = [
       </div>
     </RouterLink>
     <nav>
-      <ul class="flex items-center gap-8">
+      <ul class="flex items-center gap-5 md:gap-8">
         <li v-for="item in menuItems" :key="item.href">
           <RouterLink class="flex items-center gap-2" :to="item.href">
             <img :src="item.icon" alt="" />
