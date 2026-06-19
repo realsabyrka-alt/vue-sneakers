@@ -25,7 +25,7 @@ const menuItems = [
 
 <template>
   <header
-    class="flex flex-col justify-between items-center gap-5 p-5 border-slate-300 border-b sm:flex-row md:p-10"
+    class="flex flex-col justify-between items-center gap-5 p-5 border-slate-200 border-b sm:flex-row md:p-10"
   >
     <RouterLink class="flex items-center gap-4 transition hover:scale-105 active:scale-100" to="/">
       <img class="w-10" :src="logoImage" alt="Vue Sneakers Logo" width="40" height="40" />
