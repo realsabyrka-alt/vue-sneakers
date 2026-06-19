@@ -7,17 +7,17 @@ import profileIcon from '@/assets/profile.svg'
 const menuItems = [
   {
     icon: cartIcon,
-    label: 'Cart',
+    label: 'Корзина',
     href: '/cart',
   },
   {
     icon: favoritesIcon,
-    label: 'Favorites',
+    label: 'Закладки',
     href: '/favorites',
   },
   {
     icon: profileIcon,
-    label: 'Profile',
+    label: 'Профиль',
     href: '/profile',
   },
 ]
@@ -28,10 +28,10 @@ const menuItems = [
     class="flex flex-col justify-between items-center gap-5 p-5 border-slate-300 border-b sm:flex-row md:p-10"
   >
     <RouterLink class="flex items-center gap-4 transition hover:scale-105 active:scale-100" to="/">
-      <img class="w-10" :src="logoImage" alt="Vue Sneakers Logo" />
+      <img class="w-10" :src="logoImage" alt="Vue Sneakers Logo" width="40" height="40" />
       <div>
         <h1 class="text-xl font-bold uppercase">Vue Sneakers</h1>
-        <p class="text-sm text-[#9D9D9D]">The Best Sneakers Shop</p>
+        <p class="text-sm text-[#9D9D9D]">Магазин лучших кроссовок</p>
       </div>
     </RouterLink>
     <nav>
@@ -41,7 +41,7 @@ const menuItems = [
             class="flex items-center gap-2 transition hover:scale-105 active:scale-100"
             :to="item.href"
           >
-            <img :src="item.icon" alt="" />
+            <img :src="item.icon" alt="" width="18" height="18" />
             <span>{{ item.label }}</span>
           </RouterLink>
         </li>
